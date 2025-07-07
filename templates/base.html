@@ -12,13 +12,21 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<header>
+    <div class="header__container">
+        <div class="header__left">
+            <form action="darkmode">
+            <button class="darkbtn"> Dark </button>
+            </form>
+        </div>
+    </div>
 
-    <header>
-        
 
+</header>
 
-    </header>
+<body class="{{ dark }}">
+
+    
 
     {% block content %}
 

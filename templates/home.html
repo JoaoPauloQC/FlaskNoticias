@@ -15,10 +15,14 @@
     {% for i in news %}
     <div class="card">
         <div class="card__img">
-            <img src="" alt="">
+            <img src=" {{ i['img'] }} " alt="">
         </div>
         <div class="card__text">
-            <p> {{ news[i] }} </p>
+            <p> {{ i['name'] }} </p>
+            
+        </div>
+        <div class="button__area">
+            <button class="acessbtn"><a href="{{ i['link'] }}">Acesse!</a></button>
         </div>
     </div>
     {% endfor %}
