@@ -100,7 +100,11 @@ def filter():
 
             }
             sendnews.append(new)
-    return render_template('home.html', news=sendnews)
+    if request.cookies.get('dark'):
+        dark = request.cookies.get('dark')
+    else:
+        dark = ''
+    return render_template('home.html', news=sendnews , dark=dark)
 
 
 
