@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+
 
 <div class="filter__buttons">
     <form action="filter" method="post">
     <button name="ctg" value="sport" id="sportbtn"> Esporte </button>
     <button name="ctg" value="geral" id="geralbtn"> Geral </button>
+    <button name="ctg" value="tecnologia" id="tecnologiabtn"> Tecnologia </button>
+    <button name="ctg" value="saude" id="saudebtn"> Saúde </button>
+    <button name="ctg" value="economia" id="economiabtn"> Economia </button>
     </form>
 </div>
 
+
 <div class="news__container">
 
-    
+
+   
     {% for i in news %}
     <div class="card">
         <div class="card__img">
@@ -19,15 +26,17 @@
         </div>
         <div class="card__text">
             <p> {{ i['name'] }} </p>
-            
+           
         </div>
         <div class="button__area">
             <button class="acessbtn"><a href="{{ i['link'] }}">Acesse!</a></button>
         </div>
     </div>
     {% endfor %}
-        
+       
+
 
 </div>
+
 
 {% endblock %}
