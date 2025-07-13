@@ -6,11 +6,15 @@ body{
 }
 
 
+
+
 header{
     background-color: black;
     height: max-content;
     padding: 10px;
 }
+
+
 
 
 .hi__text{
@@ -23,13 +27,21 @@ header{
 }
 
 
+
+
 .dark{
+
+
 
 
     background-color: rgb(31, 31, 31);
 
 
+
+
 }
+
+
 
 
 .form__container{
@@ -44,7 +56,11 @@ header{
     margin-right: auto;
 
 
+
+
 }
+
+
 
 
 .form__container input{
@@ -58,10 +74,14 @@ header{
 }
 
 
+
+
 .form__container input:hover, .form__container input:focus{
     border: 1px solid #d8d8d8;
     background-color: white;
 }
+
+
 
 
 .form__container form{
@@ -70,6 +90,8 @@ header{
     justify-items: center;
     gap: 10px;
 }
+
+
 
 
 .form__container button{
@@ -83,6 +105,8 @@ header{
 }
 
 
+
+
 .form__container button:hover {
     background-color: black;
     color: white;
@@ -91,9 +115,14 @@ header{
 
 
 
+
+
+
+
 .news__container{
     width: 1200px;
     display: grid;
+    min-height: 80vh;
     grid-template-columns: 1fr 1fr 1fr;
     margin-left: auto;
     margin-right: auto;
@@ -103,12 +132,16 @@ header{
 }
 
 
+
+
 .card{
     width: 300px;
     height: 300px;
     background-color: rgb(231, 231, 231);
     border-radius: 15px;
 }
+
+
 
 
 .card__text{
@@ -121,9 +154,13 @@ header{
 }
 
 
+
+
 .card__text p::-webkit-scrollbar{
     display: none;
 }
+
+
 
 
 .card__text p{
@@ -135,6 +172,8 @@ header{
 }
 
 
+
+
 .button__area{
     width: 100%;
     display: grid;
@@ -143,6 +182,8 @@ header{
     align-items: center;
    
 }
+
+
 
 
 .acessbtn{
@@ -165,6 +206,10 @@ header{
 
 
 
+
+
+
+
 .header__container{
     width: 1200px;
     padding: 10px;
@@ -173,13 +218,17 @@ header{
 }
 
 
+
+
 .darkbtn{
     font-family: Montserrat;
     width: 50px;
     height: 50px;
-    background-color: #383838;
+    background-color: #e2e2e285;
     border-radius: 10px;
 }
+
+
 
 
 .card__img{
@@ -196,6 +245,8 @@ header{
 }
 
 
+
+
 .filter__buttons {
     display: grid;
     justify-content: end;
@@ -205,11 +256,15 @@ header{
 }
 
 
+
+
 .filter__buttons form{
     padding-top: 80px;
     display: flex;
     gap: 20px;
 }
+
+
 
 
 .filter__buttons button{
@@ -224,10 +279,14 @@ header{
 }
 
 
+
+
 #geralbtn{
     background-color: #830000;
     color: rgb(255, 255, 255);
 }
+
+
 
 
 #tecnologiabtn{
@@ -236,10 +295,14 @@ header{
 }
 
 
+
+
 #saudebtn{
     background-color: rgb(73, 255, 194);
     color: white;
 }
+
+
 
 
 #economiabtn{
@@ -248,24 +311,42 @@ header{
 }
 
 
+#todasbtn {
+    background-color: #383838;
+    color: white;
+}
+
+
+
+
 footer{
-    height: 60px;
+    height: 80px;
     background-color: black;
 }
 
 
+
+
 .footer__container{
+    width: 100%;
+    height: 100%;
+    display: grid;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
     color: white;
     font-family: Montserrat;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     padding: 10px;
 }
 
 
+
+
 .login_container{
+
+
 
 
     height: 100vh;
@@ -276,4 +357,10 @@ footer{
 
 
 
+
+
+
+
 }
+
+
