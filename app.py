@@ -1,11 +1,7 @@
 from flask import Flask, render_template, url_for, request, make_response, redirect
 
 
-
-
 app = Flask(__name__)
-
-
 
 
 users = {
@@ -23,11 +19,7 @@ users = {
 }
 
 
-
-
 dark = "none"
-
-
 
 
 newsdict = {
@@ -47,8 +39,6 @@ newsdict = {
 }
 
 
-
-
 @app.route("/")
 def login_page():
     if request.cookies.get('username'):
@@ -64,8 +54,6 @@ def login_page():
     return render_template("login.html")
 
 
-
-
 @app.route("/signin", methods=['POST'])
 def signin():
     name = request.form['name']
@@ -75,11 +63,8 @@ def signin():
             resp = make_response(redirect(url_for('news')))
             resp.set_cookie('username', name)
 
-
             return resp
     return redirect(url_for('login_page'))
-
-
 
 
 @app.route('/byecookies')
@@ -90,13 +75,9 @@ def byecookies():
     return resp
 
 
-
-
 @app.route('/getcookies')
 def cookies():
     return request.cookies
-
-
 
 
 @app.route('/home')
@@ -116,8 +97,6 @@ def news():
     return render_template('home.html', news=sendnews, dark=dark)
 
 
-
-
 @app.route('/darkmode')
 def darkmode():
     if request.cookies.get('dark'):
@@ -126,10 +105,8 @@ def darkmode():
         return resp
     else:
         resp = make_response(redirect(url_for("news")))
-        resp.set_cookie('dark', 'dark')
+        resp.set_cookie('dark', 'dark', max_age=1800)
         return resp
-
-
 
 
 @app.route('/filter', methods=['POST'])
@@ -141,7 +118,6 @@ def filter():
         dark = ''
     if filterctg == 'todas':
         return redirect(url_for('news'))
-
 
     sendnews = []
     for i in newsdict:
@@ -157,10 +133,7 @@ def filter():
             }
             sendnews.append(new)
 
-
     return render_template('home.html', news=sendnews, dark=dark)
-
-
 
 
 if __name__ == '__main__':
