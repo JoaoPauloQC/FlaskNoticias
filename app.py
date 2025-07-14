@@ -94,7 +94,7 @@ def news():
         dark = request.cookies.get('dark')
     else:
         dark = ''
-    return render_template('home.html', news=sendnews, dark=dark)
+    return render_template('home.html', news=sendnews, dark=dark, user=request.cookies.get('username'))
 
 
 @app.route('/darkmode')
@@ -133,7 +133,7 @@ def filter():
             }
             sendnews.append(new)
 
-    return render_template('home.html', news=sendnews, dark=dark)
+    return render_template('home.html', news=sendnews, dark=dark, user=request.cookies.get('username'))
 
 
 if __name__ == '__main__':

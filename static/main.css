@@ -2,7 +2,7 @@ body{
     min-height: 100vh;
     margin: 0;
     display: grid;
-   
+    transition: 0.3s linear;
 }
 
 
@@ -44,8 +44,18 @@ header{
     font-family: Montserrat;
 }
 
+.dark__text{
+    color: white;
+}
 
+.title{
 
+    font-family: Montserrat;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 100px;
+    transition: 1s;
+}
 
 .dark{
 
