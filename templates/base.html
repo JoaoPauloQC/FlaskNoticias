@@ -1,57 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Website</title>
-    <link rel="stylesheet" href="{{ url_for('static' , filename='main.css') }}">
+    <title>Seu Portal de Notícias</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
-
-<header>
-    <div class="header__container">
-        <div class="header__left">
-            <form action="darkmode">
-            <button class="darkbtn"> Dark </button>
-            </form>
-        </div>
-        <div class="header__right"> 
-        <form action="byecookies">
-            <button class="logoutbtn"> Logout </button>
-        </form>    
-        
-        </div>
-    </div>
-
-
-
-
-</header>
-
-
 <body class="{{ dark }}">
+    <header class="main-header">
+        <div class="header__container">
+            <div class="site-branding">
+                <a href="{{ url_for('news') }}" class="site-logo">NewsPulse</a>
+            </div>
+            
+            <nav class="main-nav">
+                {# Adicione aqui links de navegação se precisar, por exemplo: #}
+                {# <ul><li><a href="{{ url_for('about') }}">Sobre</a></li></ul> #}
+            </nav>
 
-
-   
-
-
-    {% block content %}
-
-
-    {% endblock %}
-
-
-    <footer>
-        <div class="footer__container">
-            2025 - João Paulo Queiroz Costa, Vitória Xavier Pereira e Sofia Bali Ferreira
+            <div class="header__actions">
+                <form action="{{ url_for('darkmode') }}" method="get" class="dark-mode-form">
+                    <button type="submit" class="darkbtn" aria-label="Alternar Modo Escuro">
+                        <span class="darkbtn-icon">💡</span>
+                        <span class="darkbtn-text">Dark</span>
+                    </button>
+                </form>
+                
+                <form action="{{ url_for('byecookies') }}" method="get" class="logout-form">
+                    <button type="submit" class="logoutbtn">Sair</button>
+                </form>
+            </div>
         </div>
+    </header>
 
+    <main class="content-wrapper">
+        {% block content %}
+        {% endblock %}
+    </main>
 
+    <footer class="main-footer">
+        <div class="footer__container">
+            <p>&copy; 2025 NewsPulse. Todos os direitos reservados.</p>
+            <p>Desenvolvido por João Paulo Queiroz Costa, Vitória Xavier Pereira e Sofia Bali Ferreira.</p>
+        </div>
     </footer>
 </body>
 </html>

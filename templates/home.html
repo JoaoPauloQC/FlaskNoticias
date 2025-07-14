@@ -1,14 +1,9 @@
 {% extends 'base.html' %}
 
-
-
-
 {% block content %}
 
-
-
-
 <div class="filter__buttons">
+    <center>
     <form action="filter" method="post">
     <button name="ctg" value="todas" id="todasbtn"> Todas </button>
     <button name="ctg" value="sport" id="sportbtn"> Esporte </button>
@@ -17,19 +12,15 @@
     <button name="ctg" value="saude" id="saudebtn"> Saúde </button>
     <button name="ctg" value="economia" id="economiabtn"> Economia </button>
     </form>
+    </center>
 </div>
+
 
 <div>
-    <h1 class="title {{ dark }}__text"> Noticias para {{ (user.upper()) }}</h1>
+    <h1 class="title {{ dark }}__text"> Notícias para {{ (user.upper()) }}</h1>
 </div>
 
-
 <div class="news__container">
-
-
-
-
-   
     {% for i in news %}
     <div class="card">
         <div class="card__img">
@@ -37,21 +28,12 @@
         </div>
         <div class="card__text">
             <p> {{ i['name'] }} </p>
-           
         </div>
         <div class="button__area">
-            <button class="acessbtn"><a href="{{ i['link'] }}">Acesse!</a></button>
+            <a href="{{ i['link'] }}" class="acessbtn" target="_blank" rel="noopener noreferrer">Acesse!</a>
         </div>
     </div>
     {% endfor %}
-       
-
-
-
-
 </div>
-
-
-
 
 {% endblock %}
